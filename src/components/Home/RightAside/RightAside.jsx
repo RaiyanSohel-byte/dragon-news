@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../../Contexts/AuthContext/AuthContext";
 import { toast } from "react-toastify";
-import { Navigate, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { FaFacebook, FaGoogle, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const RightAside = () => {

@@ -1,23 +1,13 @@
 import { Bookmark, CircleOff, Share2 } from "lucide-react";
-import { NavLink, useLoaderData, useParams } from "react-router";
+import React from "react";
 import { FaEye, FaRegStar, FaStar } from "react-icons/fa";
-const News = () => {
-  const news = useLoaderData();
-  const newsIdStr = useParams();
-  const newsId = parseInt(newsIdStr.id);
-  const filteredNews = news.filter((n) => {
-    if (newsId !== 0 && newsId !== 1) {
-      return n.category_id === newsId;
-    } else if (newsId === 0) {
-      return n;
-    } else if (newsId === 1) {
-      return n.others.is_today_pick === true;
-    }
-  });
+import { NavLink, useLoaderData } from "react-router";
 
+const AllNews = () => {
+  const news = useLoaderData();
   return (
     <div>
-      {filteredNews.length > 0 ? (
+      {news.length > 0 ? (
         <>
           <div>
             <h3 className="font-semibold mb-4 text-center lg:text-left hidden lg:block">
@@ -25,7 +15,7 @@ const News = () => {
             </h3>
           </div>
           <div className=" px-6 lg:px-0">
-            {filteredNews.map((news) => (
+            {news.map((news) => (
               <div
                 key={news.id}
                 className="mb-4 lg:w-xl mx-auto border border-gray-200 rounded-md"
@@ -155,4 +145,4 @@ const News = () => {
   );
 };
 
-export default News;
+export default AllNews;

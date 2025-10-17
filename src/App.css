@@ -4,3 +4,11 @@ html,
   font-family: "Poppins", sans-serif;
   background-color: #ffffff;
 }
+.social-media-contact {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  cursor: pointer;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+}

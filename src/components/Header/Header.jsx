@@ -50,7 +50,7 @@ const Header = () => {
     <>
       <li>
         <NavLink
-          to="/0"
+          to="/"
           className={({ isActive }) => (isActive ? "underline font-bold" : "")}
         >
           Home

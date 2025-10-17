@@ -10,6 +10,7 @@ import Dashboard from "../components/Dashboard/Dashboard";
 import ForgetPassword from "../components/ForgetPassword/ForgetPassword";
 import News from "../components/Home/News/News";
 import Details from "../components/Details/Details";
+import AllNews from "../components/AllNews/AllNews";
 
 export const router = createBrowserRouter([
   {
@@ -17,15 +18,21 @@ export const router = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        index: true,
+        path: "/",
         element: <Home />,
+        children: [
+          {
+            index: true,
+            loader: () => fetch("/data.json"),
+            element: <AllNews />,
+          },
+          {
+            path: ":id",
+            loader: () => fetch("/data.json"),
+            element: <News />,
+          },
+        ],
       },
-      {
-        path: ":id",
-        loader: () => fetch("/data.json"),
-        element: <News />,
-      },
-
       {
         path: "about",
         element: <About />,

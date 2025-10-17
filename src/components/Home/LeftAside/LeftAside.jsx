@@ -16,15 +16,15 @@ const LeftAside = ({ categoriesPromise }) => {
         Find Us On
       </h3>
       <div className=" lg:hidden flex justify-center">
-        <div className="flex  gap-1 items-center cursor-pointer px-5 border border-gray-300 py-3">
+        <div className="social-media-contact">
           <FaFacebook />
           Facebook
         </div>
-        <div className="flex gap-1 items-center cursor-pointer px-5 border border-gray-300 py-3">
+        <div className="social-media-contact">
           <FaTwitter />
           Twitter
         </div>
-        <div className="flex gap-1 items-center cursor-pointer px-5 border border-gray-300 py-3">
+        <div className="social-media-contact">
           <FaInstagram />
           Instagram
         </div>
