@@ -5,11 +5,14 @@ import App from "./App.jsx";
 import { RouterProvider } from "react-router";
 import { router } from "./routes/router.jsx";
 import AuthProvider from "./Contexts/AuthContext/AuthProvider.jsx";
+import BookmarkProvider from "./Contexts/BookmarkContext/BookmarkProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <BookmarkProvider>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </BookmarkProvider>
   </StrictMode>
 );
