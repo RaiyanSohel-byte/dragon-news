@@ -146,12 +146,37 @@ const Header = () => {
           <div className="flex gap-3 items-center">
             {user ? (
               <>
-                {" "}
-                <img
-                  className="w-[40px] h-[40px] rounded-[50%] border-2 border-white shadow-md"
-                  src={user?.photoURL || avatar}
-                  alt="Profile Photo"
-                />
+                <div className="dropdown dropdown-end">
+                  <div
+                    tabIndex={0}
+                    role="button"
+                    className="btn btn-ghost btn-circle avatar"
+                  >
+                    <div className="w-10 rounded-full border">
+                      <img
+                        alt="Tailwind CSS Navbar component"
+                        src={user?.photoURL || avatar}
+                      />
+                    </div>
+                  </div>
+                  <ul
+                    tabIndex="-1"
+                    className="menu menu-sm dropdown-content bg-base-100 font-bold z-1 mt-3 w-52 p-2 shadow border border-gray-300"
+                  >
+                    <li>
+                      <NavLink
+                        to="/profile"
+                        className="justify-between border-b border-gray-300"
+                      >
+                        Profile
+                      </NavLink>
+                    </li>
+
+                    <li>
+                      <a onClick={handleSignOut}>Logout</a>
+                    </li>
+                  </ul>
+                </div>
                 <button
                   onClick={handleSignOut}
                   className="btn btn-neutral btn-outline"

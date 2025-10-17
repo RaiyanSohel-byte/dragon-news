@@ -25,6 +25,7 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
   const googleSignIn = () => {
+    setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
   const logOutUser = () => {
@@ -32,6 +33,7 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
   const forgetPassword = (email) => {
+    setLoading(true);
     return sendPasswordResetEmail(auth, email);
   };
   useEffect(() => {

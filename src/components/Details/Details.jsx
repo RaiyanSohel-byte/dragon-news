@@ -34,7 +34,14 @@ const Details = () => {
                   <div className="title-and-date">
                     <h3>{news.author.name}</h3>
                     <p className="text-gray-500 text-[10px]">
-                      {news.author.published_date}
+                      {new Date(news.author.published_date).toLocaleDateString(
+                        "en-US",
+                        {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        }
+                      )}
                     </p>
                   </div>
                 </div>

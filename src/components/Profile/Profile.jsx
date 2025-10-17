@@ -10,15 +10,7 @@ const ProfilePage = () => {
   if (!user)
     return <div className="text-center p-10 text-gray-500">Loading...</div>;
 
-  const {
-    displayName,
-    email,
-    emailVerified,
-    photoURL,
-    metadata,
-    uid,
-    providerId,
-  } = user;
+  const { displayName, email, emailVerified, photoURL, metadata, uid } = user;
 
   return (
     <div className="flex flex-col  justify-center   px-4 ">
@@ -33,10 +25,6 @@ const ProfilePage = () => {
           <FaUser className="text-blue-500" />
           {displayName}
         </h1>
-
-        <p className="text-gray-500 text-sm mb-4">
-          {providerId?.toUpperCase()} USER
-        </p>
 
         <div className="flex flex-col gap-3 text-left mt-4">
           <div className="flex items-center gap-3 text-gray-700">
